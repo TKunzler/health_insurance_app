@@ -63,7 +63,8 @@ class HealthInsurance:
     
     def get_prediction( self, model, original_data, test_data ):
         # model prediction
-        pred = model.predict_proba( test_data )
+        pred = model.predict_proba(test_data)[:, 1]  # Pega a segunda coluna (classe 1)
+
 
         # join prediction into original data
         original_data['Score'] = pred
