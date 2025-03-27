@@ -1,3 +1,6 @@
+import pickle
+import pandas as pd
+
 class HealthInsurance:
 
     def __init__( self ):
