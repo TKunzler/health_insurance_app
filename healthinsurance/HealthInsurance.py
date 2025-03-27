@@ -25,13 +25,13 @@ class HealthInsurance:
     
     def data_preparation(self, df2):
         # annual premium - Standard Scaler
-        df2['Annual_Premium'] = self.annual_premium_scaller.transform(df2[['Annual_Premium']].values)
+        df2['Annual_Premium'] = self.annual_premium_scaler.transform(df2[['Annual_Premium']].values)
                                                                      
         # Age - MinMax Scaler
         df2['Age'] = self.age_scaller.transform(df2[['Age']].values)
 
         # Vintage - MinMax Scaler
-        df2['Vintage'] = self.vintage_scaller.transform(df2[['Vintage']].values)
+        df2['Vintage'] = self.vintage_scaler.transform(df2[['Vintage']].values)
 
         # Gender - One Hot Encoding / Target Encoding
         df2.loc[:, 'Gender'] = df2['Gender'].map(self.target_encode_gender_scaler)
